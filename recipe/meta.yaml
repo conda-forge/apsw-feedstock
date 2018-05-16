@@ -18,12 +18,12 @@ requirements:
   build:
     - python
     - setuptools
-    - sqlite 3.22.0
+    - sqlite 3.23.1
     - toolchain
 
   run:
     - python
-    - sqlite 3.22.0
+    - sqlite 3.23.1
 
 test:
   imports:
