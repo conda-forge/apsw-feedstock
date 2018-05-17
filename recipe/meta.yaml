@@ -1,6 +1,6 @@
 {% set name = "apsw" %}
-{% set version = "3.22.0-r1" %}
-{% set sha256 = "4ac5a9a66b5dd0c11987bff0cc3bd94733e89da26b1cfa4037a36a3ba8392615" %}
+{% set version = "3.23.1-r1" %}
+{% set sha256 = "692936799f8edfae371709fb948c446ea9e7d6fff5993bc9af6fd579c887f641" %}
 
 package:
   name: {{ name|lower }}
@@ -18,12 +18,12 @@ requirements:
   build:
     - python
     - setuptools
-    - sqlite 3.22.0
+    - sqlite 3.23.1
     - toolchain
 
   run:
     - python
-    - sqlite 3.22.0
+    - sqlite 3.23.1
 
 test:
   imports:
