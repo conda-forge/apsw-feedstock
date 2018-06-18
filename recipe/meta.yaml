@@ -16,14 +16,15 @@ build:
 
 requirements:
   build:
+    - {{ compiler('c') }}
+  host:
     - python
     - setuptools
-    - sqlite 3.23.1
-    - toolchain
+    - sqlite
 
   run:
     - python
-    - sqlite 3.23.1
+    - sqlite
 
 test:
   imports:
