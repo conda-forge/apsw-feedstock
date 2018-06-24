@@ -16,10 +16,11 @@ build:
 
 requirements:
   build:
+    - {{ compiler('c') }}
+  host:
     - python
     - setuptools
     - sqlite 3.23.1
-    - toolchain
 
   run:
     - python
