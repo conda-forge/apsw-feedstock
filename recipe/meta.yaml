@@ -20,11 +20,11 @@ requirements:
   host:
     - python
     - setuptools
-    - sqlite 3.23.1
+    - sqlite 3.24.0
 
   run:
     - python
-    - sqlite 3.23.1
+    - sqlite 3.24.0
 
 test:
   imports:
