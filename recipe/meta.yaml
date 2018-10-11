@@ -1,15 +1,12 @@
-{% set name = "apsw" %}
 {% set version = "3.24.0-r1" %}
-{% set sha256 = "d9769daba2112aec7f46b807097818f68f03a9aaac61dd1e4bb0cc4167f8d29d" %}
 
 package:
-  name: {{ name|lower }}
+  name: apsw
   version: {{ version|replace("-", ".") }}
 
 source:
-  fn: {{ version }}.tar.gz
-  url: https://github.com/rogerbinns/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://github.com/rogerbinns/apsw/archive/{{ version }}.tar.gz
+  sha256: d9769daba2112aec7f46b807097818f68f03a9aaac61dd1e4bb0cc4167f8d29d
 
 build:
   number: 1000
@@ -19,12 +16,12 @@ requirements:
     - {{ compiler('c') }}
   host:
     - python
-    - setuptools
-    - sqlite 3.24.0
+    - pip
+    - sqlite
 
   run:
     - python
-    - sqlite 3.24.0
+    - sqlite
 
 test:
   imports:
