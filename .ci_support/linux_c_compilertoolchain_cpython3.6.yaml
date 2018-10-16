@@ -1,9 +1,13 @@
+build_number_decrement:
+- '1000'
 c_compiler:
-- vs2008
+- toolchain_c
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
+docker_image:
+- condaforge/linux-anvil
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -11,9 +15,12 @@ pin_run_as_build:
   sqlite:
     max_pin: x
 python:
-- '2.7'
+- '3.6'
 sqlite:
 - '3'
 zip_keys:
-- - python
-  - c_compiler
+- - c_compiler
+  - channel_sources
+  - channel_targets
+  - docker_image
+  - build_number_decrement
