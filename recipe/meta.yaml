@@ -1,4 +1,4 @@
-{% set version = "3.24.0-r1" %}
+{% set version = "3.25.2-r1" %}
 
 package:
   name: apsw
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/rogerbinns/apsw/archive/{{ version }}.tar.gz
-  sha256: d9769daba2112aec7f46b807097818f68f03a9aaac61dd1e4bb0cc4167f8d29d
+  sha256: 5a54f673a8a878d31e530ef2ce7faf679545f2cdff7dd0a3b1ce58187bfb1cf7
 
 build:
   number: 1000
