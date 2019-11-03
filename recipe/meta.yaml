@@ -17,11 +17,11 @@ requirements:
   host:
     - python
     - pip
-    - sqlite
+    - sqlite 3.29.0
 
   run:
     - python
-    - sqlite
+    - sqlite 3.29.0
 
 test:
   imports:
