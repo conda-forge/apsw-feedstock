@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/rogerbinns/apsw/archive/{{ version }}.tar.gz
-  sha256: f41cf587e4f86d29a9aec28ef85a54d312616b9022406d702faf576a8851e3d9
+  sha256: 33f3ccfd8a7537dccef2caeb8cc06e26f300f1cf547c22c4e8ec8dcfecb72aa0
 
 build:
   number: 0
