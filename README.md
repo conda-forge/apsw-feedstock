@@ -5,9 +5,13 @@ Home: https://github.com/rogerbinns/apsw/
 
 Package license: OSI
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/apsw-feedstock/blob/master/LICENSE.txt)
 
 Summary: APSW stands for Another Python SQLite Wrapper.
+
+Development: https://github.com/rogerbinns/apsw
+
+Documentation: https://rogerbinns.github.io/apsw/pysqlite.html
 
 APSW is a Python wrapper for the SQLite embedded relational database
 engine. In contrast to other wrappers such as pysqlite it focuses on being
