@@ -14,11 +14,11 @@ Development: https://github.com/rogerbinns/apsw
 Documentation: https://rogerbinns.github.io/apsw/pysqlite.html
 
 APSW is a Python wrapper for the SQLite embedded relational database
-engine. In contrast to other wrappers such as pysqlite it focuses on being
-a minimal layer over SQLite attempting just to translate the complete
-SQLite API into Python. The documentation has a section on the differences
-between APSW and pysqlite. APSW supports CPython 2.3 onwards and CPython
-3.1 onwards.
+engine. It focuses translating between the complete SQLite C API and
+Python's C API. It is recommended to use the builtin sqlite3 module, unless
+you want SQLite specific functionality. The documentation has a section on
+the differences between APSW and sqlite3. APSW supports CPython 3.6
+onwards:
 
 
 Current build status
