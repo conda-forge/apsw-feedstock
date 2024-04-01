@@ -1,5 +1,5 @@
-{% set version = "3.39.4.0" %}
-{% set sqlite_version = "3.39.4" %}
+{% set version = "3.41.2.0" %}
+{% set sqlite_version = "3.41.2" %}
 
 package:
   name: apsw
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/rogerbinns/apsw/archive/{{ version }}.tar.gz
-  sha256: 8c4336c1ab3470ac43a6ea9e11646c5296d63577c210cf89daf870cd72d80906
+  sha256: 03d4e1995a561b8ff2c5c07534fb6c93b2971994157ccd44df21e8bc7df0e139
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -19,10 +19,12 @@ requirements:
     - python
     - pip
     - sqlite =={{ sqlite_version }}
+    - pycalverter
 
   run:
     - python
     - sqlite =={{ sqlite_version }}
+    - pycalverter
 
 test:
   imports:
