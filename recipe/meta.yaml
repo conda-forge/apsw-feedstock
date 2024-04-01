@@ -19,10 +19,12 @@ requirements:
     - python
     - pip
     - sqlite =={{ sqlite_version }}
+    - pycalverter
 
   run:
     - python
     - sqlite =={{ sqlite_version }}
+    - pycalverter
 
 test:
   imports:
