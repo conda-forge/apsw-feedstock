@@ -10,10 +10,12 @@ source:
   sha256: 26e3b14130875660fa31e88d6b58a8aeae8e1acd59ead8dacf0e48b54f250a2e
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
   host:

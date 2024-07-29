@@ -41,6 +41,11 @@ if EXIST LICENSE.txt (
     echo Copying feedstock license
     copy LICENSE.txt "recipe\\recipe-scripts-license.txt"
 )
+if NOT [%HOST_PLATFORM%] == [%BUILD_PLATFORM%] (
+    if [%CROSSCOMPILING_EMULATOR%] == [] (
+        set "EXTRA_CB_OPTIONS=%EXTRA_CB_OPTIONS% --no-test"
+    )
+)
 
 if NOT [%flow_run_id%] == [] (
     set "EXTRA_CB_OPTIONS=%EXTRA_CB_OPTIONS% --extra-meta flow_run_id=%flow_run_id% remote_url=%remote_url% sha=%sha%"
@@ -52,6 +57,11 @@ call :end_group
 echo Building recipe
 conda-build.exe "recipe" -m .ci_support\%CONFIG%.yaml --suppress-variables %EXTRA_CB_OPTIONS%
 if !errorlevel! neq 0 exit /b !errorlevel!
+
+call :start_group "Inspecting artifacts"
+:: inspect_artifacts was only added in conda-forge-ci-setup 4.6.0
+WHERE inspect_artifacts >nul 2>nul && inspect_artifacts || echo "inspect_artifacts needs conda-forge-ci-setup >=4.6.0"
+call :end_group
 
 :: Prepare some environment variables for the upload step
 if /i "%CI%" == "github_actions" (
