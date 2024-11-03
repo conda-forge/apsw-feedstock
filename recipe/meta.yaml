@@ -1,5 +1,5 @@
 {% set version = "3.46.1.0" %}
-{% set sqlite_version = "3.46.0" %}
+{% set sqlite_version = "3.46.1" %}
 
 package:
   name: apsw
@@ -10,7 +10,7 @@ source:
   sha256: 2ecab0d2fb41f96d90ff7439bb34793e8803186f5cb1aa8c613d6b0ba11b3963
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -19,10 +19,11 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
   host:
-    - python
     - pip
-    - sqlite =={{ sqlite_version }}
     - pycalverter
+    - python
+    - setuptools
+    - sqlite =={{ sqlite_version }}
 
   run:
     - python
