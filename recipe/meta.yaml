@@ -19,10 +19,11 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
   host:
-    - python
     - pip
-    - sqlite =={{ sqlite_version }}
     - pycalverter
+    - python
+    - setuptools
+    - sqlite =={{ sqlite_version }}
 
   run:
     - python
