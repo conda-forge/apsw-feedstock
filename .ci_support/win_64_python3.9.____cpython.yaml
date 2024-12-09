@@ -12,7 +12,5 @@ pin_run_as_build:
     max_pin: x.x
 python:
 - 3.9.* *_cpython
-sqlite:
-- '3'
 target_platform:
 - win-64
