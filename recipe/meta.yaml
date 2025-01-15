@@ -1,13 +1,13 @@
-{% set version = "3.47.0.0" %}
-{% set sqlite_version = "3.47.0" %}
+{% set version = "3.47.2.0" %}
+{% set sqlite_version = "3.47.2" %}
 
 package:
   name: apsw
   version: {{ version|replace("-", ".") }}
 
 source:
-  url: https://github.com/rogerbinns/apsw/archive/{{ version }}.tar.gz
-  sha256: b5d9441d0603d485a508db684eedadc174dbf33a55312fc4af25de3b3f6b750d
+  url: https://github.com/rogerbinns/apsw/releases/download/{{ version }}/apsw-{{ version }}.zip
+  sha256: 22425dc6d4853611202a6f0a303d3405ee84622622256dd2a73b4e6be05e6e91
 
 build:
   number: 0
@@ -31,12 +31,17 @@ requirements:
     - pycalverter
 
 test:
+  requires:
+    - python
+    - pip
   imports:
     - apsw
+  commands:
+    - pip check
 
 about:
   home: https://github.com/rogerbinns/apsw/
-  license: OSI
+  license: any-OSI
   license_file: LICENSE
   summary: APSW stands for Another Python SQLite Wrapper.
   description: |
