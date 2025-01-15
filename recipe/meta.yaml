@@ -1,5 +1,5 @@
 {% set version = "3.48.0.0" %}
-{% set sqlite_version = "3.47.0" %}
+{% set sqlite_version = "3.48.0" %}
 
 package:
   name: apsw
@@ -31,8 +31,13 @@ requirements:
     - pycalverter
 
 test:
+  require:
+    - python
+    - pip
   imports:
     - apsw
+  commands:
+    - pip check
 
 about:
   home: https://github.com/rogerbinns/apsw/
