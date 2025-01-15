@@ -31,12 +31,17 @@ requirements:
     - pycalverter
 
 test:
+  requires:
+    - python
+    - pip
   imports:
     - apsw
+  commands:
+    - pip check
 
 about:
   home: https://github.com/rogerbinns/apsw/
-  license: OSI
+  license: any-OSI
   license_file: LICENSE
   summary: APSW stands for Another Python SQLite Wrapper.
   description: |
