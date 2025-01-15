@@ -6,8 +6,8 @@ package:
   version: {{ version|replace("-", ".") }}
 
 source:
-  url: https://github.com/rogerbinns/apsw/archive/{{ version }}.tar.gz
-  sha256: b5944e413d6b731fb06778e27fbebb405ea6f5c361d1401cd9f160cdfcd81f41
+  url: https://github.com/rogerbinns/apsw/releases/download/{{ version }}/apsw-{{ version }}.zip
+  sha256: 22425dc6d4853611202a6f0a303d3405ee84622622256dd2a73b4e6be05e6e91
 
 build:
   number: 0
