@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/apsw-feedstock/
 
 Home: https://github.com/rogerbinns/apsw/
 
-Package license: OSI
+Package license: any-OSI
 
 Summary: APSW stands for Another Python SQLite Wrapper.
 
