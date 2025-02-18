@@ -1,4 +1,4 @@
-{% set version = "3.48.0.0" %}
+{% set version = "3.49.1.0" %}
 {% set sqlite_version = "3.48.0" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/rogerbinns/apsw/releases/download/{{ version }}/apsw-{{ version }}.zip
-  sha256: 4a02617b22fe87a5e9d32ae1692a638a45dc40e76c66f2b9ca22e4e309493d72
+  sha256: b42612139b5a3b049deb69f9d07e180922ae0bfa4b34a1bcffd2c047914a325d
 
 build:
   number: 0
