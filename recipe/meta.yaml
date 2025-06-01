@@ -22,11 +22,11 @@ requirements:
     - pip
     - python
     - setuptools
-    - sqlite =={{ sqlite_version }}
+    - libsqlite =={{ sqlite_version }}
 
   run:
     - python
-    - sqlite =={{ sqlite_version }}
+    - libsqlite =={{ sqlite_version }}
 
 test:
   requires:
