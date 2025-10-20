@@ -1,5 +1,5 @@
 {% set version = "3.50.4.0" %}
-{% set sqlite_version = "3.50.3" %}
+{% set sqlite_version = "3.50.4" %}
 
 package:
   name: apsw
@@ -10,7 +10,7 @@ source:
   sha256: 3af0263b8e1f71acd1ef4684f51baa02646c949a8e44c82e19f7c4d14a496bbe
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
