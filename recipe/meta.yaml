@@ -1,5 +1,5 @@
 {% set version = "3.51.0.0" %}
-{% set sqlite_version = "3.50.4" %}
+{% set sqlite_version = "3.51.0" %}
 
 package:
   name: apsw
