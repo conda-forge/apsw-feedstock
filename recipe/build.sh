@@ -64,6 +64,6 @@ fi
 $PYTHON setup.py build --enable=column_metadata,session,preupdate_hook
 $PYTHON setup.py install --single-version-externally-managed --record record.txt
 
-if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR:-}" != "" ]]; then
     $PYTHON setup.py test
 fi
