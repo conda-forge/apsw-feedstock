@@ -14,19 +14,14 @@ export LDFLAGS="-L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib ${LDFLAGS}"
 # (https://rogerbinns.github.io/apsw/install.html#advice-for-packagers) on how
 # to match the system SQLite configuration.
 
-if [[ $target_platform =~ linux.* ]]; then
-    # So for linux find out the options
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR:-}" != "" ]]; then
+    # get compile options from sqlite lib
     echo "
 [build_ext]
 use_system_sqlite_config = True" >> setup.apsw
 else
-    # FIXME: MacOS CI failed to build with autodetection (locally on my M1
-    # Macbooked it worked)
-
-    # error: dlopen([...]lib/libsqlite3.3.51.0.dylib' (mach-o file, but is an
-    # incompatible architecture (have 'arm64', need 'x86_64h' or 'x86_64'))
-
-    # so we tried to build with options copioed from sqlite recipe:
+    # Cross Compilation:
+    # build with options copioed from sqlite recipe:
     # https://github.com/conda-forge/sqlite-feedstock/blob/main/recipe/build.sh
 
     echo "
