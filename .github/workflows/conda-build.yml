@@ -19,7 +19,7 @@ jobs:
     timeout-minutes: 360
     strategy:
       fail-fast: false
-      max-parallel: 10
+      max-parallel: 50
       matrix:
         include:
           - CONFIG: linux_64_python3.10.____cpython
@@ -47,46 +47,6 @@ jobs:
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-          - CONFIG: osx_64_python3.10.____cpython
-            UPLOAD_PACKAGES: True
-            os: macos
-            runs_on: ['macos-15-intel']
-          - CONFIG: osx_64_python3.11.____cpython
-            UPLOAD_PACKAGES: True
-            os: macos
-            runs_on: ['macos-15-intel']
-          - CONFIG: osx_64_python3.12.____cpython
-            UPLOAD_PACKAGES: True
-            os: macos
-            runs_on: ['macos-15-intel']
-          - CONFIG: osx_64_python3.13.____cp313
-            UPLOAD_PACKAGES: True
-            os: macos
-            runs_on: ['macos-15-intel']
-          - CONFIG: osx_64_python3.14.____cp314
-            UPLOAD_PACKAGES: True
-            os: macos
-            runs_on: ['macos-15-intel']
-          - CONFIG: osx_arm64_python3.10.____cpython
-            UPLOAD_PACKAGES: True
-            os: macos
-            runs_on: ['macos-15-intel']
-          - CONFIG: osx_arm64_python3.11.____cpython
-            UPLOAD_PACKAGES: True
-            os: macos
-            runs_on: ['macos-15-intel']
-          - CONFIG: osx_arm64_python3.12.____cpython
-            UPLOAD_PACKAGES: True
-            os: macos
-            runs_on: ['macos-15-intel']
-          - CONFIG: osx_arm64_python3.13.____cp313
-            UPLOAD_PACKAGES: True
-            os: macos
-            runs_on: ['macos-15-intel']
-          - CONFIG: osx_arm64_python3.14.____cp314
-            UPLOAD_PACKAGES: True
-            os: macos
-            runs_on: ['macos-15-intel']
     steps:
 
     - name: Checkout code
@@ -160,7 +120,7 @@ jobs:
         # default value; make it explicit, as it needs to match with artefact
         # generation below. Not configurable for now, can be revisited later
         CONDA_BLD_DIR: C:\bld
-        MINIFORGE_HOME: D:\Miniforge
+        MINIFORGE_HOME: ${{ contains(runner.arch, 'ARM') && 'C' || 'D' }}:\Miniforge
         PYTHONUNBUFFERED: 1
         CONFIG: ${{ matrix.CONFIG }}
         CI: github_actions
